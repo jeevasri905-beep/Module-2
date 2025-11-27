@@ -17,19 +17,31 @@ To write a Python program that generates **Pascal's Triangle** using numbers. Th
 3. Loop from 0 to the number of rows.
 4. For each row:
    - Print appropriate spaces to shape the triangle.
-   - Compute values using the formula:  
-     \[
-     C(n, k) = \frac{n!}{k!(n-k)!}
-     \]
+   - Compute values using the formula:
+     C(n, k) = n!/[k!(n-k)!]
 5. Print all rows of Pascal’s Triangle.
 6. End the program.
-
 ---
-
 ## 🧪 Program
-Add Code Here
+```
+def fact(n):
+    f=1
+    for i in range(1,n+1):
+        f*=i
+    return f
+    
+r=int(input("rows: "))
+print()
 
+for n in range(r):
+    print(" " * (r - n), end="")
+    for k in range(n + 1):
+        value = fact(n) // (fact(k) * fact(n - k))
+        print(value, end=" ")
+    print()
+```
 ## Sample Output
+<img width="197" height="203" alt="image" src="https://github.com/user-attachments/assets/7dd65076-e2bb-447d-a9aa-81dd4999977a" />
 
 ## Result
-
+Thus, the program is executed successfully.
